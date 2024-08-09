@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-.test {
-  @apply bg-white shadow-lg p-5 rounded-3xl w-full max-w-screen-sm flex flex-col gap-2;
+@layer base {
+  /* 모든 a 태그값에 디폴트로 적용 */
+  a {
+    @apply text-orange-500;
+  }
+}
+@layer components {
+  .primary-btn {
+    @apply w-full bg-orange-500 text-white  font-medium  rounded-md text-center hover:bg-orange-400 transition-colors;
+  }
 }
