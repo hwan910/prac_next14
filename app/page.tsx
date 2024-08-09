@@ -11,7 +11,7 @@ export default function Home() {
       2xl:bg-blue-400
       "
     >
-      <div className="bg-white shadow-lg p-5 rounded-3xl w-full max-w-screen-sm flex flex-col gap-2 ">
+      <div className="test ">
         {['Nico', 'Me', 'You'].map((person, index) => (
           <div
             key={index}
@@ -21,6 +21,8 @@ export default function Home() {
             <div className="bg-red-400  text-center size-6 rounded-full text-white  animate-spin group-hover:animate-none">
               🎲
             </div>
+            <button className="btn btn-primary btn-sm">Button</button>
+            <input />
           </div>
         ))}
       </div>
