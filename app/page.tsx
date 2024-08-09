@@ -2,6 +2,8 @@ export default function Home() {
   return (
     <main
       className="bg-gray-100 h-screen flex items-center justify-center p-5
+      xxs:bg-pink-800
+      xs:bg-pink-600
       sm:bg-red-200
       md:bg-green-200
       lg:bg-blue-200
@@ -9,34 +11,18 @@ export default function Home() {
       2xl:bg-blue-400
       "
     >
-      <div
-        className="bg-white shadow-lg p-5 rounded-3xl w-full max-w-screen-sm flex flex-col gap-2
-      "
-      >
-        <input
-          className=" pl-5 bg-gray-100 w-full rounded-full h-10 outline-none ring ring-transparent
-          focus:ring-blue-400 focus:ring-offset-2 transition-shadow
-          placeholder:drop-shadow-xl
-          invalid:focus:bg-red-100
-          invalid:focus:ring-red-500
-          peer
-          "
-          type="email"
-          required
-          placeholder="Eamil address"
-        />
-        <span className="pl-5 hidden text-red-500 peer-invalid:block">
-          올바른 형식이 아닙니다.
-        </span>
-        <button
-          className=" bg-gradient-to-tr from-cyan-400 to-purple-400  text-white py-2 rounded-full md:px-8 
-
-        peer-invalid:from-slate-400
-        peer-invalid:to-red-400
-        "
-        >
-          Submit
-        </button>
+      <div className="bg-white shadow-lg p-5 rounded-3xl w-full max-w-screen-sm flex flex-col gap-2 ">
+        {['Nico', 'Me', 'You'].map((person, index) => (
+          <div
+            key={index}
+            className="border-b-2 p-5 first:border-t-2 flex items-center group "
+          >
+            <div className="mr-2 group-hover:bg-gray-400">{person}</div>
+            <div className="bg-red-400  text-center size-6 rounded-full text-white  animate-spin group-hover:animate-none">
+              🎲
+            </div>
+          </div>
+        ))}
       </div>
     </main>
   );
