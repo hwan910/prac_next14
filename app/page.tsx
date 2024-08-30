@@ -1,26 +1,36 @@
-import Link from 'next/link';
+'use client';
 
-const Home = () => {
-  return (
-    <div className="flex flex-col items-center justify-between min-h-screen p-6">
-      <div className="my-auto flex flex-col items-center gap-2 *:font-medium">
-        <span className="text-9xl">🥕</span>
-        <h1 className="text-4xl ">당근</h1>
-        <h2 className="text-2xl">당근 마켓에 어서오세요!</h2>
-      </div>
-      <div className="flex flex-col items-center gap-3 w-full">
-        <Link href="/create-account" className="primary-btn text-lg py-2.5">
-          시작하기
-        </Link>
-        <div className="flex gap-2">
-          <span>이미 계정이 있나요?</span>
-          <Link href="/login" className="hover:underline">
-            로그인
-          </Link>
-        </div>
-      </div>
-    </div>
-  );
+import { type Sketch } from '@p5-wrapper/react';
+import { NextReactP5Wrapper } from '@p5-wrapper/next';
+import { Image } from 'p5';
+
+const sketch: Sketch = (p) => {
+  let img: Image;
+  p.preload = () => {
+    img = p.loadImage('images/creatures/BabyWinston.png'); // 이미지 파일 경로를 실제 경로로 변경하세요.
+  };
+
+  p.setup = () => {
+    p.createCanvas(800, 600);
+    // Scene 1
+    p.background(235, 247, 255);
+    p.fill(0, 85, 255);
+    p.textSize(25);
+    p.text('The Story of Winston', 10, 200);
+  };
+
+  p.draw = () => {
+    p.mouseClicked = function () {
+      // Scene 2
+      p.background(173, 239, 255);
+      p.fill(7, 14, 145);
+      p.textSize(25);
+      p.text('Lil Winston is born!', 10, 100);
+      p.image(img, 80, 150);
+    };
+  };
 };
 
-export default Home;
+export default function Page() {
+  return <NextReactP5Wrapper sketch={sketch} />;
+}
