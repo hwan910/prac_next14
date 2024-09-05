@@ -197,7 +197,10 @@ const sketch: Sketch = (p: P5CanvasInstance) => {
 export default function Page() {
   return (
     <div className="p-16">
-      <h1 className="text-3xl font-semibold mb-4">물의상태</h1>
+      <h1 className="text-3xl font-semibold ">물의상태</h1>
+      <h2 className="text-xl font-semibold mb-4 text-gray-500">
+        온도를 바꿔보세요
+      </h2>
       <div
         className="border-2"
         style={{ position: 'relative', width: 650, height: 650 }}

@@ -92,7 +92,10 @@ const sketch: Sketch = (p: P5CanvasInstance) => {
 export default function Page() {
   return (
     <div className="p-16">
-      <h1 className="text-3xl font-semibold mb-4">나루토 점프</h1>
+      <h1 className="text-3xl font-semibold ">나루토 점프</h1>
+      <h2 className="text-xl font-semibold mb-4 text-gray-500">
+        스페이스바를 눌러보세요
+      </h2>
       <div
         className="border-2"
         style={{ position: 'relative', width: 650, height: 650 }}
