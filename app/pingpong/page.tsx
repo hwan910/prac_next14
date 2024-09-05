@@ -44,7 +44,7 @@ const sketch: Sketch = (p: P5CanvasInstance) => {
       p.fill(0);
       p.textSize(32);
       p.textAlign(p.CENTER, p.CENTER);
-      p.text('축하합니다!', canvasWidth / 2, canvasHeight / 2);
+      p.text('축하합니다!!!', canvasWidth / 2, canvasHeight / 2);
       ballXSpeed = 8;
       ballYSpeed = -8;
       ballX = canvasWidth / 2;
